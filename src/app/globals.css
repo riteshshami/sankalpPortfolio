@@ -1,3 +1,4 @@
+/* global.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,8 +27,44 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.bg-cover-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-cover-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300vh; /* Twice the height of the viewport for larger screens */
+  background-image: url('/hero.jpg'); /* Update with correct path */
+  background-size: cover; /* Cover entire width and height of viewport */
+  background-position: top center;
+  background-repeat: no-repeat;
+  transform: scaleX(-1); /* Flip the image horizontally */
+  z-index: -1; /* Place the image behind the content */
+}
+
+@media (max-width: 768px) {
+  .bg-cover-image::after {
+    height: 200vh; /* Adjust height for smaller screens */
   }
+}
+
+.bg-frame1 {
+  background-image: url('/frame-1.svg'); /* Update with correct path */
+  background-size: cover; /* Cover entire width, maintain aspect ratio for height */
+  background-repeat: no-repeat;
+  padding: 50px; /* Adjust padding as needed */
+  height: 400px; /* Set a larger height to align content properly */
+}
+
+.bg-frame2 {
+  background-image: url('/frame-2.svg'); /* Update with correct path */
+  background-size: cover; /* Cover entire width, maintain aspect ratio for height */
+  background-repeat: no-repeat;
+  padding: 50px; /* Adjust padding as needed */
+  height: 400px; /* Set a larger height to align content properly */
 }

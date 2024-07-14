@@ -1,113 +1,173 @@
+import Card from "@/components/Card";
 import Image from "next/image";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import logo from "../../public/logo.png";
+import profile from "../../public/profile.png";
+import { cards } from "@/assets/article";
+import { MdEmail } from "react-icons/md";
+import { ImLinkedin } from "react-icons/im";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <main className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative bg-cover-image p-10 pb-[1200px]">
+        <nav className="flex justify-between items-center px-4 py-2">
+          <Image src={logo} alt="Logo" />
+          <div className="text-white hover:cursor-pointer underline">
+            <a
+              href="https://www.linkedin.com/in/sankalp-agarwal-04a632166/"
+              className="text-base flex items-center gap-1"
+            >
+              <p>Contact Me</p>
+              <MdOutlineKeyboardArrowRight />
+            </a>
+          </div>
+        </nav>
+        <section className="flex flex-col items-center mt-24 text-center gap-5">
+          <h1 className="text-3xl font-bold">
+            Crafting Smooth Experiences And Driving <br /> Growth Through Design
+          </h1>
+          <p className="text-sm font-normal">
+            Hi, I am Sankalp Agarwal, I am on path of making people's <br />{" "}
+            life easy through design
+          </p>
+          <a href="#">
+            <button className="bg-[#ffffff] px-4 py-2 rounded-sm text-[#345FA3] font-normal hover:bg-[#cfcfcf]">
+              Explore Me
+            </button>
           </a>
+        </section>
+        <section className="mt-80 text-right flex flex-col gap-7 px-4 md:px-24">
+          <h1 className="text-3xl font-bold">About Me</h1>
+          <p className="text-sm font-normal leading-6">
+            Hi I am Sankalp Agarwal, I am on path of making life of people
+            <br />
+            easy through design, I am a well trained engineer born and
+            <br />
+            up in Agra, UP.{" "}
+          </p>
+          <p className="text-sm font-normal leading-6">
+            I discovered design by creating posters of different NGOs, and
+            <br />
+            become fascinating when I came to know how about a path to
+            <br />
+            solve real people software problems.
+          </p>
+          <p className="text-sm font-normal leading-6">
+            Creating with users along with growth led approach of design is
+            <br />
+            my strength an favorite thing
+          </p>
+          <div className="flex justify-end">
+            <button className="bg-[#ffffff] px-4 py-2 rounded-sm text-[#345FA3] font-normal max-w-[185px] hover:bg-[#cfcfcf]">
+              My Journey so far
+            </button>
+          </div>
+        </section>
+      </section>
+      {/* Live Projects */}
+      <section className="mt-[-660px] md:mt-[-510px] relative z-10">
+        <h2 className="text-xl font-bold px-4 md:px-24 pt-12 bg-white text-black">
+          Live Projects
+        </h2>
+        <div className="flex flex-col gap-7 p-10 bg-white">
+          {/* Project 1 */}
+          <div className="bg-frame2 flex flex-col md:flex-row justify-between p-4">
+            <div className="flex flex-col gap-8 md:w-[50%]">
+              <h2 className="text-2xl md:text-3xl font-bold">
+                Title & Escrow Made Easy With Title
+                <br />
+                Clarity Banking Software
+              </h2>
+              <div className="bg-[#E53A35] max-w-20 h-1"></div>
+              <p className="text-xs md:text-sm font-normal">
+                Nam massa erat, aliquet a rutrum eu, sagittis ac nibh.
+                <br />
+                Pellentesque velit dolor, suscipit in ligula.
+              </p>
+              <button className="bg-[#18460C] hover:bg-[#0e2508] px-4 py-2 rounded-sm text-[#ffffff] font-normal max-w-[185px]">
+                View My Work
+              </button>
+            </div>
+            <div className="w-full md:w-[50%] h-[225px] mt-6 md:mt-0 hidden md:block">
+              <img
+                src="/frame2-img.png"
+                alt="Frame 1 image"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+          {/* Project 2 */}
+          <div className="bg-frame1 flex flex-col md:flex-row justify-between p-4">
+            <div className="flex flex-col gap-8 md:w-[50%]">
+              <h2 className="text-2xl md:text-3xl font-bold">
+                Grow Business by Increasing your Team
+                <br />
+                Productivity with Mera Monitor
+              </h2>
+              <div className="bg-[#E53A35] max-w-20 h-1"></div>
+              <p className="text-xs md:text-sm font-normal">
+                Nam massa erat, aliquet a rutrum eu, sagittis ac nibh.
+                <br />
+                Pellentesque velit dolor, suscipit in ligula.
+              </p>
+              <button className="bg-[#ffffff] hover:bg-[#cfcfcf] px-4 py-2 rounded-sm text-black font-normal max-w-[185px]">
+                Contact us
+              </button>
+            </div>
+            <div className="w-full md:w-[400px] h-[200px] mt-6 md:mt-0 hidden md:block">
+              <img
+                src="/frame1-img.png"
+                alt="Frame 2 image"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </section>
+      {/* Articles Section */}
+      <section className="px-4 md:px-24 pt-20 pb-32 bg-white text-black">
+        <h2 className="text-lg md:text-xl font-bold pb-10">
+          My Published Articles
+        </h2>
+        <div className="flex flex-col md:flex-row justify-evenly gap-10">
+          {cards.map((card, i) => (
+            <Card
+              key={i}
+              src={card.src}
+              date={card.date}
+              heading={card.heading}
+              author={card.author}
+              platform={card.platform}
+            />
+          ))}
+        </div>
+      </section>
+      {/* Footer */}
+      <section className="w-full flex flex-col md:flex-row bg-[#f3f1f1f5] text-black px-8 md:px-20 py-16 mx-auto items-center justify-center">
+        <div className="flex-shrink-0 mb-6 md:mb-0">
+          <Image
+            src={profile}
+            alt="Logo"
+            className="w-24 h-24 object-cover rounded-full hover:shadow-2xl"
+          />
+        </div>
+        <div className="md:ml-10 text-center md:text-left">
+          <p className="text-2xl font-semibold">Let's Connect</p>
+          <div className="flex flex-col gap-0.5 mt-2">
+            <a href="mailto:Sankalpsunny15@gmail.com" className="text-base">
+              <MdEmail className="inline" /> Email
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sankalp-agarwal-04a632166/"
+              className="text-base"
+            >
+              <ImLinkedin className="inline" /> LinkedIn
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
